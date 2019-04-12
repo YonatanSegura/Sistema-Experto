@@ -13,12 +13,16 @@ public class VocSys {
         SE sistema = new SE();
         String r1 = "", r2 = "", rMicro = "", rDoc = "", resultadosNumero = "", N1 = "", N2 = "", N3 = "", N4 = "", N5 = "", N6 = "", N7 = "", N8 = "", N9 = "", N10 = "";
         String resultado = getRespuesta("¿Qué materia te intesa más? \n 1.- Bacterias y patógenos \n 2.- Relaciones Numericas");
+        String  rAnantomia="", rEnfermedades="";
+        //String resultado = getRespuesta("¿Qué materia te intesa más? \n 1.- Bacterias y patógenos \n 2.- Relaciones Numericas \n 3.- Modelado y diseño \n 4.-Software");
 
         if (resultado.contains("1")) {//Bacterias y patógenos
             r1 = sistema.obtenerDatosInteres(Variables.SI, Variables.NO, Variables.NO, Variables.NO);
             String resultadoBacterianas = getRespuesta("Que te interesa? \n 1.- Microbiologia y Parasitologia \n 2.- Anatomia y Fisiologia \n 3.- Conocer sobre Enfermedades");
 
-            if (resultadoBacterianas.contains("1")) { //Microbiologia
+
+            //---------------Microbiologia y PARASITOLOGIA TERMINADO ----------------------------
+            if (resultadoBacterianas.contains("1")) {
                 r2 = sistema.obtenerDatosBacterianas(Variables.SI, Variables.NO, Variables.NO);
 
                 String resultadoMicro = getRespuesta("Que te interesa \n" +
@@ -70,8 +74,10 @@ public class VocSys {
                 } else if (resultadoMicro.contains("5")) { //Esterilización, desinfección y antisepsia
                     rMicro = sistema.obtenerMicro(Variables.NO, Variables.NO, Variables.NO, Variables.NO, Variables.SI);
 
-                    String resultadoDoc = getRespuesta("Que te interesa \n 1- Deteccion de Enfermedades \n" +
-                            "2- Curacion de Heridas \n 3- Cirujias");
+                    String resultadoDoc = getRespuesta("Que te interesa \n" +
+                            "1- Deteccion de Enfermedades \n" +
+                            "2- Curacion de Heridas \n" +
+                            "3- Cirujias");
 
                     if (resultadoDoc.contains("1")) {
                         rDoc = sistema.obtenerDoc(Variables.SI, Variables.NO, Variables.NO);
@@ -86,12 +92,53 @@ public class VocSys {
                     System.out.println("*----------------------------------*");
                 }
 
+                //--------------TERMINA CON CARRERAS --------------------
 
             } else if (resultadoBacterianas.contains("2")) { //Fisiologia
                 r2 = sistema.obtenerDatosBacterianas(Variables.NO, Variables.SI, Variables.NO);
 
+                String resultadoAnatomia = getRespuesta("Que te interesa \n" +
+                        "1- Atencion a Animales \n" +
+                        "2- Enfermedades Humanas \n" +
+                        "3- El sistema musculoesquelético");
+
+                if(resultadoAnatomia.contains("1")){
+                    rAnantomia = sistema.obtenerAnantomia(Variables.SI,Variables.NO,Variables.NO);
+                } else if (resultadoAnatomia.contains("2")){
+                    rAnantomia = sistema.obtenerAnantomia(Variables.NO,Variables.SI,Variables.NO);
+                } else if (resultadoAnatomia.contains("3")) {
+                    rAnantomia = sistema.obtenerAnantomia(Variables.NO,Variables.NO,Variables.SI);
+                }
+
+                System.out.println("*----------------------------------*");
+                System.out.println(rAnantomia);
+                System.out.println("*----------------------------------*");
+
+                //--------------TERMINA CON CARRERAS --------------------
+
             } else if (resultadoBacterianas.contains("3")) { //Enfermedades
                 r2 = sistema.obtenerDatosBacterianas(Variables.NO, Variables.NO, Variables.SI);
+                String resultadoEnfermedades = getRespuesta("Que te interesa \n" +
+                        "1- Enfermedades en general \n" +
+                        "2- Salud bucal \n" +
+                        "3- Nutricion y estilos de alimentacion humana \n" +
+                        "4- Higiene, Seguridad  y medicina preventiva");
+
+                if(resultadoEnfermedades.contains("1")){
+                    rEnfermedades = sistema.obtenerEnfer(Variables.SI,Variables.NO,Variables.NO,Variables.NO);
+                } else if (resultadoEnfermedades.contains("2")){
+                    rEnfermedades = sistema.obtenerEnfer(Variables.NO,Variables.SI,Variables.NO,Variables.NO);
+                } else if (resultadoEnfermedades.contains("3")) {
+                    rEnfermedades = sistema.obtenerEnfer(Variables.NO,Variables.NO,Variables.SI,Variables.NO);
+                } else if (resultadoEnfermedades.contains("4")) {
+                    rEnfermedades = sistema.obtenerEnfer(Variables.NO,Variables.NO,Variables.NO,Variables.SI);
+                }
+
+                System.out.println("*----------------------------------*");
+                System.out.println(rEnfermedades);
+                System.out.println("*----------------------------------*");
+
+
             }
 
             //System.out.println("El resultado de bacteriana es: "+ r2);
