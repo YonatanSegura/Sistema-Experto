@@ -7,14 +7,23 @@ public class SE {
     //obejto tipo booleano
   private  BooleanRuleBase reglas = new BooleanRuleBase("reglas");
     // Variables datos de entrada
-   private RuleVariable bacterianas, numeros, design, software, microbiologia, fisiologia,
-                  enfermedades, virus, hongos, parasitos, patogena, antisepcia,
-                detecEnfermedades, heridas, cirujias, N1P1, N1P2,N1P3;
+   private RuleVariable bacterianas, numeros, design, software,
+                        microbiologia, fisiologia, enfermedades,
+                        virus, hongos, parasitos, patogena, antisepcia,
+                        detecEnfermedades, heridas, cirujias, N1P1, N1P2,N1P3,
+                        animales, enferHum, quiropractico,
+                        medicina, odontologia, nutricion, ocupacional;
 
 
 
     //Variables de Salida
-   private RuleVariable resultadoInteres, resultadoBacteriana, resultadoMicro, resultadoDoc,resultadoN1;
+   private RuleVariable resultadoInteres,
+                        resultadoBacteriana,
+                        resultadoMicro,
+                        resultadoDoc,
+                        resultadoN1,
+                        resultadoAnatomia,
+                        resultadoEnfermedades;
 
    private String Resultado = "";
 
@@ -74,6 +83,29 @@ public class SE {
         return Resultado;
     }
 
+    public String obtenerAnantomia(String isAnimales, String isEnerHum, String isQuiro){
+        BaseConocimiento();
+        animales.setValue(isAnimales);
+        enferHum.setValue(isEnerHum);
+        quiropractico.setValue(isQuiro);
+        reglas.forwardChain();
+        Resultado = resultadoAnatomia.getValue();
+
+        return Resultado;
+    }
+
+    public String obtenerEnfer(String isMedicina, String isOdon, String isNutri, String isOcupa){
+        BaseConocimiento();
+        medicina.setValue(isMedicina);
+        odontologia.setValue(isOdon);
+        nutricion.setValue(isNutri);
+        ocupacional.setValue(isOcupa);
+        reglas.forwardChain();
+        Resultado = resultadoEnfermedades.getValue();
+
+        return Resultado;
+    }
+
     public void BaseConocimiento() {
         //Iniciando variables de entrada
         bacterianas = new RuleVariable(reglas, "");
@@ -96,6 +128,16 @@ public class SE {
         N1P2 = new RuleVariable(reglas,"");
         N1P3 = new RuleVariable(reglas,"");
 
+        animales = new RuleVariable(reglas, "");
+        enferHum = new RuleVariable(reglas, "");
+        quiropractico = new RuleVariable(reglas,"");
+
+        medicina = new RuleVariable(reglas,"");
+        odontologia = new RuleVariable(reglas,"");
+        nutricion = new RuleVariable(reglas,"");
+        ocupacional = new RuleVariable(reglas,"");
+
+
         //Iniciando variables de Salida
         resultadoInteres = new RuleVariable(reglas, "");
         resultadoBacteriana = new RuleVariable(reglas, "");
@@ -103,6 +145,11 @@ public class SE {
         resultadoDoc = new RuleVariable(reglas,"");
 
         resultadoN1 = new RuleVariable(reglas,"");
+
+        resultadoAnatomia = new RuleVariable(reglas,"");
+
+        resultadoEnfermedades = new RuleVariable(reglas,"");
+
 
 
 
@@ -290,6 +337,89 @@ public class SE {
                 },
                 new Clause(resultadoN1,igual,"Enseñar matemáticas")
         );
+
+
+
+
+
+
+        //--------------Aqui casual para no PERDERME
+
+
+        Rule ruleAnimales = new Rule(
+                reglas, "ruleAnimales",
+                new Clause[]{
+                        new Clause(animales, igual, "si"),
+                        new Clause(enferHum, igual, "no"),
+                        new Clause(quiropractico, igual, "no")
+                },
+                new Clause(resultadoAnatomia,igual,"Veterinaria")
+        );
+
+        Rule ruleEnferHum = new Rule(
+                reglas, "ruleEnferHum",
+                new Clause[]{
+                        new Clause(animales, igual, "no"),
+                        new Clause(enferHum, igual, "si"),
+                        new Clause(quiropractico, igual, "no")
+                },
+                new Clause(resultadoAnatomia,igual,"Cientifico Medico")
+        );
+
+        Rule ruleQuiro = new Rule(
+                reglas, "ruleQuiro",
+                new Clause[]{
+                        new Clause(animales, igual, "no"),
+                        new Clause(enferHum, igual, "no"),
+                        new Clause(quiropractico, igual, "si")
+                },
+                new Clause(resultadoAnatomia,igual,"Doctor en Quiropractica")
+        );
+
+        Rule ruleMedicina = new Rule(
+                reglas, "ruleMedicina",
+                new Clause[]{
+                        new Clause(medicina, igual, "si"),
+                        new Clause(odontologia, igual, "no"),
+                        new Clause(nutricion, igual, "no"),
+                        new Clause(ocupacional, igual, "no")
+                },
+                new Clause(resultadoEnfermedades,igual,"Medicina General")
+        );
+
+        Rule ruleOdon = new Rule(
+                reglas, "ruleMedicina",
+                new Clause[]{
+                        new Clause(medicina, igual, "no"),
+                        new Clause(odontologia, igual, "si"),
+                        new Clause(nutricion, igual, "no"),
+                        new Clause(ocupacional, igual, "no")
+                },
+                new Clause(resultadoEnfermedades,igual,"Odontologia")
+        );
+
+        Rule ruleNutricion = new Rule(
+                reglas, "ruleNutricion",
+                new Clause[]{
+                        new Clause(medicina, igual, "no"),
+                        new Clause(odontologia, igual, "no"),
+                        new Clause(nutricion, igual, "si"),
+                        new Clause(ocupacional, igual, "no")
+                },
+                new Clause(resultadoEnfermedades,igual,"Licenciatura en Nutricion")
+        );
+
+        Rule ruleOcupa = new Rule(
+                reglas, "ruleOcupa",
+                new Clause[]{
+                        new Clause(medicina, igual, "no"),
+                        new Clause(odontologia, igual, "no"),
+                        new Clause(nutricion, igual, "no"),
+                        new Clause(ocupacional, igual, "si")
+                },
+                new Clause(resultadoEnfermedades,igual,"Salud Ocupacional")
+        );
+
 
 
     }
