@@ -9,12 +9,13 @@ public class SE {
     // Variables datos de entrada
    private RuleVariable bacterianas, numeros, design, software, microbiologia, fisiologia,
                   enfermedades, virus, hongos, parasitos, patogena, antisepcia,
-                detecEnfermedades, heridas, cirujias, N1P1, N1P2,N1P3;
+                detecEnfermedades, heridas, cirujias, N1P1, N1P2,N2P1,N2P2,N3P1,N3P2,N4P1,N4P2,N5P1,N5P2,N6P1,N6P2,N7P1,N7P2,N8P1,N8P2,N9P1,N9P2,N10P1,N10P2;
 
 
 
     //Variables de Salida
-   private RuleVariable resultadoInteres, resultadoBacteriana, resultadoMicro, resultadoDoc,resultadoN1;
+   private RuleVariable resultadoInteres, resultadoBacteriana, resultadoMicro, resultadoDoc,resultadoN1,resultadoN2,
+            resultadoN3,resultadoN4,resultadoN5,resultadoN6,resultadoN7,resultadoN8,resultadoN9,resultadoN10;
 
    private String Resultado = "";
 
@@ -29,13 +30,84 @@ public class SE {
 
         return Resultado;
     }
-    public  String obtenerResultadosRelacionesNum(String isN1P1,String isN1P2,String isN1P3){
+    public  String obtenerResultadosRelacionesNum(String isN1P1,String isN1P2){
         BaseConocimiento();
         N1P1.setValue(isN1P1);
         N1P2.setValue(isN1P2);
-        N1P3.setValue(isN1P3);
         reglas.forwardChain();
         Resultado = resultadoN1.getValue();
+        return Resultado;
+    }
+    public String getN2(String isN2P1, String isN2P2){
+        BaseConocimiento();
+        N2P1.setValue(isN2P1);
+        N2P2.setValue(isN2P2);
+        reglas.forwardChain();
+        Resultado = resultadoN2.getValue();
+        return Resultado;
+    }
+    public String getN3(String isN3P1,String isN3P2){
+        BaseConocimiento();
+        N3P1.setValue(isN3P1);
+        N3P2.setValue(isN3P2);
+        reglas.forwardChain();
+        Resultado = resultadoN3.getValue();
+        return Resultado;
+    }
+    public String getN4(String isN4P1,String isN4P2){
+        BaseConocimiento();
+        N4P1.setValue(isN4P1);
+        N4P2.setValue(isN4P2);
+        reglas.forwardChain();
+        Resultado = resultadoN4.getValue();
+        return Resultado;
+    }
+    public String getN5(String isN5P1,String isN5P2){
+        BaseConocimiento();
+        N5P1.setValue(isN5P1);
+        N5P2.setValue(isN5P2);
+        reglas.forwardChain();
+        Resultado = resultadoN5.getValue();
+        return Resultado;
+    }
+    public String getN6(String isN6P1,String isN6P2){
+        BaseConocimiento();
+        N6P1.setValue(isN6P1);
+        N6P2.setValue(isN6P2);
+        reglas.forwardChain();
+        Resultado = resultadoN6.getValue();
+        return Resultado;
+    }
+    public String getN7(String isN7P1,String isN7P2){
+        BaseConocimiento();
+        N7P1.setValue(isN7P1);
+        N7P2.setValue(isN7P2);
+        reglas.forwardChain();
+        Resultado = resultadoN7.getValue();
+        return Resultado;
+    }
+    public String getN8(String isN8P1,String isN8P2){
+        BaseConocimiento();
+        N8P1.setValue(isN8P1);
+        N8P2.setValue(isN8P2);
+        reglas.forwardChain();
+        Resultado = resultadoN8.getValue();
+        return Resultado;
+    }
+    public String getN9(String isN9P1,String isN9P2){
+        BaseConocimiento();
+        N9P1.setValue(isN9P1);
+        N9P2.setValue(isN9P2);
+        reglas.forwardChain();
+        Resultado = resultadoN9.getValue();
+        return Resultado;
+    }
+    public String getN10(String isN10P1,String isN10P2){
+        BaseConocimiento();
+        N10P1.setValue(isN10P1);
+        N10P2.setValue(isN10P2);
+        reglas.forwardChain();
+        Resultado = resultadoN10.getValue();
         return Resultado;
     }
 
@@ -94,7 +166,24 @@ public class SE {
 
         N1P1 = new RuleVariable(reglas,"");
         N1P2 = new RuleVariable(reglas,"");
-        N1P3 = new RuleVariable(reglas,"");
+        N2P1 = new RuleVariable(reglas,"");
+        N2P2 = new RuleVariable(reglas,"");
+        N3P1 = new RuleVariable(reglas,"");
+        N3P2 = new RuleVariable(reglas,"");
+        N4P1 = new RuleVariable(reglas,"");
+        N4P2 = new RuleVariable(reglas,"");
+        N5P1 = new RuleVariable(reglas,"");
+        N5P2 = new RuleVariable(reglas,"");
+        N6P1 = new RuleVariable(reglas,"");
+        N6P2 = new RuleVariable(reglas,"");
+        N7P1 = new RuleVariable(reglas,"");
+        N7P2 = new RuleVariable(reglas,"");
+        N8P1 = new RuleVariable(reglas,"");
+        N8P2 = new RuleVariable(reglas,"");
+        N9P1 = new RuleVariable(reglas,"");
+        N9P2 = new RuleVariable(reglas,"");
+        N10P1 = new RuleVariable(reglas,"");
+        N10P2 = new RuleVariable(reglas,"");
 
         //Iniciando variables de Salida
         resultadoInteres = new RuleVariable(reglas, "");
@@ -103,6 +192,15 @@ public class SE {
         resultadoDoc = new RuleVariable(reglas,"");
 
         resultadoN1 = new RuleVariable(reglas,"");
+        resultadoN2 = new RuleVariable(reglas,"");
+        resultadoN3 = new RuleVariable(reglas,"");
+        resultadoN4 = new RuleVariable(reglas,"");
+        resultadoN5 = new RuleVariable(reglas,"");
+        resultadoN6 = new RuleVariable(reglas,"");
+        resultadoN7 = new RuleVariable(reglas,"");
+        resultadoN8 = new RuleVariable(reglas,"");
+        resultadoN9 = new RuleVariable(reglas,"");
+        resultadoN10 = new RuleVariable(reglas,"");
 
 
 
@@ -268,29 +366,182 @@ public class SE {
                 new Clause[]{
                         new Clause(N1P1,igual,"si"),
                         new Clause(N1P2,igual,"no"),
-                        new Clause(N1P3,igual,"no")
+
                 },
-                new Clause(resultadoN1,igual,"Estudios suelos")
+                new Clause(resultadoN1,igual,"Análisis de estructuras, topología, matemática y física")
         );
         Rule ruleN1P2 = new Rule(
                 reglas, "ruleN1",
                 new Clause[]{
                         new Clause(N1P1,igual,"no"),
                         new Clause(N1P2,igual,"si"),
-                        new Clause(N1P3,igual,"no")
+
                 },
-                new Clause(resultadoN1,igual,"Calculo proyectos científicos")
+                new Clause(resultadoN1,igual,"Crear sistemas informáticos")
         );
-        Rule ruleN1P3 = new Rule(
-                reglas, "ruleN1",
+        Rule ruleN2P1 = new Rule(
+                reglas, "ruleN2",
                 new Clause[]{
-                        new Clause(N1P1,igual,"no"),
-                        new Clause(N1P2,igual,"no"),
-                        new Clause(N1P3,igual,"si")
+                        new Clause(N2P1,igual,"si"),
+                        new Clause(N2P2,igual,"no"),
+
                 },
-                new Clause(resultadoN1,igual,"Enseñar matemáticas")
+                new Clause(resultadoN2,igual,"Crear programas para computadores")
+        );
+        Rule ruleN2P2 = new Rule(
+                reglas, "ruleN2",
+                new Clause[]{
+                        new Clause(N2P1,igual,"no"),
+                        new Clause(N2P2,igual,"si"),
+
+                },
+                new Clause(resultadoN2,igual,"Crear sistemas hardware")
+        );
+        Rule ruleN3P1 = new Rule(
+                reglas, "ruleN3",
+                new Clause[]{
+                        new Clause(N3P1,igual,"si"),
+                        new Clause(N3P2,igual,"no"),
+
+                },
+                new Clause(resultadoN3,igual,"Aprender sobre redes de telecomunicaciones")
+        );
+        Rule ruleN3P2 = new Rule(
+                reglas, "ruleN3",
+                new Clause[]{
+                        new Clause(N3P1,igual,"no"),
+                        new Clause(N3P2,igual,"si"),
+
+                },
+                new Clause(resultadoN3,igual,"Programar una computadora para que siga ordenes")
+        );
+        Rule ruleN4P1 = new Rule(
+                reglas, "ruleN4",
+                new Clause[]{
+                        new Clause(N4P1,igual,"si"),
+                        new Clause(N4P2,igual,"no"),
+
+                },
+                new Clause(resultadoN4,igual,"Te gustaria conocer sobre hardware a un nivel básico")
+        );
+        Rule ruleN4P2 = new Rule(
+                reglas, "ruleN4",
+                new Clause[]{
+                        new Clause(N4P1,igual,"no"),
+                        new Clause(N4P2,igual,"si"),
+
+                },
+                new Clause(resultadoN4,igual,"Te gustaría enfocarte solo en software")
+        );
+        Rule ruleN5P1 = new Rule(
+                reglas, "ruleN5",
+                new Clause[]{
+                        new Clause(N5P1,igual,"si"),
+                        new Clause(N5P2,igual,"no"),
+
+                },
+                new Clause(resultadoN5,igual,"Te gustaria estudiar sobre: programacion basica,harware basico y la documentacion corespondiente")
+        );
+        Rule ruleN5P2 = new Rule(
+                reglas, "ruleN5",
+                new Clause[]{
+                        new Clause(N5P1,igual,"no"),
+                        new Clause(N5P2,igual,"si"),
+
+                },
+                new Clause(resultadoN5,igual,"te gustaria realizar harware y programar software en un nivel superior")
+        );
+        Rule ruleN6P1 = new Rule(
+                reglas, "ruleN6",
+                new Clause[]{
+                        new Clause(N6P1,igual,"si"),
+                        new Clause(N6P2,igual,"no"),
+
+                },
+                new Clause(resultadoN6,igual,"Te gustaria brindar mantenimiento a aparatos electrónicos")
+        );
+        Rule ruleN6P2 = new Rule(
+                reglas, "ruleN6",
+                new Clause[]{
+                        new Clause(N6P1,igual,"no"),
+                        new Clause(N6P2,igual,"si"),
+
+                },
+                new Clause(resultadoN6,igual,"Te gustaría crear sistemas electrónicos o modificar existentes")
         );
 
+        Rule ruleN7P1 = new Rule(
+                reglas, "ruleN7",
+                new Clause[]{
+                        new Clause(N7P1,igual,"si"),
+                        new Clause(N7P2,igual,"no"),
+
+                },
+                new Clause(resultadoN7,igual,"Te gustaría saber sobre tecnología, componentes eléctricos y eléctrónicos")
+        );
+        Rule ruleN7P2 = new Rule(
+                reglas, "ruleN7",
+                new Clause[]{
+                        new Clause(N7P1,igual,"no"),
+                        new Clause(N7P2,igual,"si"),
+
+                },
+                new Clause(resultadoN7,igual,"Me interesa únicamente saber todo sobre electricidad")
+        );
+        Rule ruleN8P1 = new Rule(
+                reglas, "ruleN8",
+                new Clause[]{
+                        new Clause(N8P1,igual,"si"),
+                        new Clause(N8P2,igual,"no"),
+
+                },
+                new Clause(resultadoN8,igual,"crear Driagramas para la creacion de infra estructura")
+        );
+        Rule ruleN8P2 = new Rule(
+                reglas, "ruleN8",
+                new Clause[]{
+                        new Clause(N8P1,igual,"no"),
+                        new Clause(N8P2,igual,"si"),
+
+                },
+                new Clause(resultadoN8,igual,"crear estudios para crear infraesturcturas")
+        );
+        Rule ruleN9P1 = new Rule(
+                reglas, "ruleN9",
+                new Clause[]{
+                        new Clause(N9P1,igual,"si"),
+                        new Clause(N9P2,igual,"no"),
+
+                },
+                new Clause(resultadoN9,igual,"Te interesa el dibujo aplicado a la cartografia")
+        );
+        Rule ruleN9P2 = new Rule(
+                reglas, "ruleN9",
+                new Clause[]{
+                        new Clause(N9P1,igual,"no"),
+                        new Clause(N9P2,igual,"si"),
+
+                },
+                new Clause(resultadoN9,igual,"Te interesa el dibujo para realizar labore generales")
+        );
+        Rule ruleN10P1 = new Rule(
+                reglas, "ruleN10",
+                new Clause[]{
+                        new Clause(N10P1,igual,"si"),
+                        new Clause(N10P2,igual,"no"),
+
+                },
+                new Clause(resultadoN10,igual,"Te interesa el dibujo aplicado a la cartografia")
+        );
+        Rule ruleN10P2 = new Rule(
+                reglas, "ruleN10",
+                new Clause[]{
+                        new Clause(N10P1,igual,"no"),
+                        new Clause(N10P2,igual,"Si"),
+
+                },
+                new Clause(resultadoN10,igual,"Te interesa el dibujo para realizar labore generales")
+        );
 
     }
 }
