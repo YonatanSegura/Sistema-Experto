@@ -46,30 +46,22 @@ public class VocSys {
                         rDoc = sistema.obtenerDoc(Variables.NO, Variables.NO, Variables.SI);
                     }
 
-                    System.out.println("*----------------------------------*");
-                    System.out.println(rDoc);
-                    System.out.println("*----------------------------------*");
+                    printCarrera(rDoc);
 
                 } else if (resultadoMicro.contains("2")) { //Clasificación, estructura y multiplicación de hongos
                     rMicro = sistema.obtenerMicro(Variables.NO, Variables.SI, Variables.NO, Variables.NO, Variables.NO);
 
-                    System.out.println("*----------------------------------*");
-                    System.out.println(rMicro);
-                    System.out.println("*----------------------------------*");
+                    printCarrera(rMicro);
 
                 } else if (resultadoMicro.contains("3")) { //Clasificación, estructura y crecimiento de parásitos
                     rMicro = sistema.obtenerMicro(Variables.NO, Variables.NO, Variables.SI, Variables.NO, Variables.NO);
 
-                    System.out.println("*----------------------------------*");
-                    System.out.println(rMicro);
-                    System.out.println("*----------------------------------*");
+                    printCarrera(rMicro);
 
                 } else if (resultadoMicro.contains("4")) { //Flora microbiana comensal y patógena
                     rMicro = sistema.obtenerMicro(Variables.NO, Variables.NO, Variables.NO, Variables.SI, Variables.NO);
 
-                    System.out.println("*----------------------------------*");
-                    System.out.println(rMicro);
-                    System.out.println("*----------------------------------*");
+                    printCarrera(rMicro);
 
                 } else if (resultadoMicro.contains("5")) { //Esterilización, desinfección y antisepsia
                     rMicro = sistema.obtenerMicro(Variables.NO, Variables.NO, Variables.NO, Variables.NO, Variables.SI);
@@ -87,9 +79,7 @@ public class VocSys {
                         rDoc = sistema.obtenerDoc(Variables.NO, Variables.NO, Variables.SI);
                     }
 
-                    System.out.println("*----------------------------------*");
-                    System.out.println(rDoc);
-                    System.out.println("*----------------------------------*");
+                    printCarrera(rDoc);
                 }
 
                 //--------------TERMINA CON CARRERAS --------------------
@@ -110,9 +100,7 @@ public class VocSys {
                     rAnantomia = sistema.obtenerAnantomia(Variables.NO,Variables.NO,Variables.SI);
                 }
 
-                System.out.println("*----------------------------------*");
-                System.out.println(rAnantomia);
-                System.out.println("*----------------------------------*");
+                printCarrera(rAnantomia);
 
                 //--------------TERMINA CON CARRERAS --------------------
 
@@ -134,9 +122,7 @@ public class VocSys {
                     rEnfermedades = sistema.obtenerEnfer(Variables.NO,Variables.NO,Variables.NO,Variables.SI);
                 }
 
-                System.out.println("*----------------------------------*");
-                System.out.println(rEnfermedades);
-                System.out.println("*----------------------------------*");
+                printCarrera(rEnfermedades);
 
 
             }
@@ -156,8 +142,9 @@ public class VocSys {
                     switch (resultN2) {
                         case "1":
                             N8 = sistema.getN8(Variables.SI, Variables.NO);
-                            System.out.println(N8);
-                            System.out.println("Tu carrera recomendada es: Ingeniería civil");
+
+                            printCarrera(N8);
+
                             break;
                         case "2":
                             N8 = sistema.getN8(Variables.SI, Variables.NO);
@@ -171,20 +158,21 @@ public class VocSys {
                                     switch (resultado10) {
                                         case "1":
                                             N10 = sistema.getN10(Variables.SI, Variables.NO);
-                                            System.out.println(N10);
-                                            System.out.println("Tu carrera recomendada es: Arquitecto");
                                             break;
                                         case "2":
                                             N10 = sistema.getN10(Variables.SI, Variables.NO);
-                                            System.out.println(N10);
-                                            System.out.println("Tu carrera recomendada es: Diseño Gráfico");
                                             break;
                                     }
+
+                                    printCarrera(N10);
+
                                     break;
+
                                 case "2":
                                     N9 = sistema.getN9(Variables.SI, Variables.NO);
-                                    System.out.println(N9);
-                                    System.out.println("Falta esta parte :(");
+
+                                    printCarrera(N9);
+
                                     break;
                             }
                             break;
@@ -204,9 +192,10 @@ public class VocSys {
                             switch (resultadoN3) {
                                 case "1"://Aprender sobre Redes de telecomunicaciones
                                     N3 = sistema.getN3(Variables.SI, Variables.NO);
-                                    System.out.println(N3);
                                     ///aquí termina el test
-                                    System.out.println("Tu carrera perfecta sería: Técnico en Redes");
+
+                                    printCarrera(N3);
+
                                     break;
                                 case "2"://Programar una computadora para que siga ordenes
                                     N3 = sistema.getN3(Variables.NO, Variables.SI);
@@ -220,21 +209,17 @@ public class VocSys {
                                             switch (resultadoN5) {
                                                 case "1":
                                                     N5 = sistema.getN5(Variables.SI, Variables.NO);
-                                                    System.out.println(N5);
-                                                    System.out.println("Tu carrera perfecta es: Ingeniería en sistemas");
                                                     break;
                                                 case "2":
                                                     N5 = sistema.getN5(Variables.NO, Variables.SI);
-                                                    System.out.println(N5);
-                                                    System.out.println("Tu carrera perfecta es: Mecatrónica");
                                                     ///Fin del primer Hilo
                                                     break;
                                             }
+                                            printCarrera(N5);
                                             break;
                                         case "2": //Enfocarte solo en software
                                             N4 = sistema.getN4(Variables.NO, Variables.SI);
-                                            System.out.println(N4);
-                                            System.out.println("Tu carrera perfecta sería: Ing. En Software :)");
+                                            printCarrera(N4);
                                             break;
 
                                     }
@@ -249,8 +234,7 @@ public class VocSys {
                             switch (resultadoN6) {
                                 case "1":
                                     N6 = sistema.getN6(Variables.SI, Variables.NO);
-                                    System.out.println(N6);
-                                    System.out.println("Tu carrera recomendada sería: Técnico en mantenimiento en computación");
+                                    printCarrera(N6);
                                     break;
                                 case "2":
                                     N6 = sistema.getN6(Variables.SI, Variables.NO);
@@ -259,15 +243,14 @@ public class VocSys {
                                     switch (resultado7) {
                                         case "1":
                                             N7 = sistema.getN7(Variables.SI, Variables.NO);
-                                            System.out.println(N7);
-                                            System.out.println("Tu carrera recomendada es Ingeniería Eléctrica");
                                             break;
                                         case "2":
                                             N7 = sistema.getN7(Variables.NO, Variables.SI);
-                                            System.out.println(N7);
-                                            System.out.println("Tu carrera recomendada es Ingeniería en Hardware");
                                             break;
                                     }
+
+                                    printCarrera(N7);
+
                                     break;
                             }
                             break;
@@ -293,6 +276,13 @@ public class VocSys {
 
     }
 
+    private static void printCarrera(String resp){
+
+        System.out.println("*----------------------------------*");
+        System.out.println("Tu carrera recomendada es: " + resp);
+        System.out.println("*----------------------------------*");
+
+    }
 
     private static String getRespuesta(String pregunta) {
         String respuesta = "";

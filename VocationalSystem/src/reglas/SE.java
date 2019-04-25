@@ -445,7 +445,7 @@ public class SE {
                         new Clause(N3P2,igual,"no"),
 
                 },
-                new Clause(resultadoN3,igual,"Aprender sobre redes de telecomunicaciones")
+                new Clause(resultadoN3,igual,"Técnico en Redes")
         );
         Rule ruleN3P2 = new Rule(
                 reglas, "ruleN3",
@@ -472,7 +472,7 @@ public class SE {
                         new Clause(N4P2,igual,"si"),
 
                 },
-                new Clause(resultadoN4,igual,"Te gustaría enfocarte solo en software")
+                new Clause(resultadoN4,igual,"Ing. En Software :)")
         );
         Rule ruleN5P1 = new Rule(
                 reglas, "ruleN5",
@@ -481,7 +481,7 @@ public class SE {
                         new Clause(N5P2,igual,"no"),
 
                 },
-                new Clause(resultadoN5,igual,"Te gustaria estudiar sobre: programacion basica,harware basico y la documentacion corespondiente")
+                new Clause(resultadoN5,igual,"Ingeniería en sistemas")
         );
         Rule ruleN5P2 = new Rule(
                 reglas, "ruleN5",
@@ -490,7 +490,7 @@ public class SE {
                         new Clause(N5P2,igual,"si"),
 
                 },
-                new Clause(resultadoN5,igual,"te gustaria realizar harware y programar software en un nivel superior")
+                new Clause(resultadoN5,igual,"Mecatrónica")
         );
         Rule ruleN6P1 = new Rule(
                 reglas, "ruleN6",
@@ -499,7 +499,7 @@ public class SE {
                         new Clause(N6P2,igual,"no"),
 
                 },
-                new Clause(resultadoN6,igual,"Te gustaria brindar mantenimiento a aparatos electrónicos")
+                new Clause(resultadoN6,igual,"Técnico en mantenimiento en computación")
         );
         Rule ruleN6P2 = new Rule(
                 reglas, "ruleN6",
@@ -518,7 +518,7 @@ public class SE {
                         new Clause(N7P2,igual,"no"),
 
                 },
-                new Clause(resultadoN7,igual,"Te gustaría saber sobre tecnología, componentes eléctricos y eléctrónicos")
+                new Clause(resultadoN7,igual,"Ingeniería Eléctrica")
         );
         Rule ruleN7P2 = new Rule(
                 reglas, "ruleN7",
@@ -527,7 +527,7 @@ public class SE {
                         new Clause(N7P2,igual,"si"),
 
                 },
-                new Clause(resultadoN7,igual,"Me interesa únicamente saber todo sobre electricidad")
+                new Clause(resultadoN7,igual,"Ingeniería en Hardware")
         );
         Rule ruleN8P1 = new Rule(
                 reglas, "ruleN8",
@@ -536,7 +536,7 @@ public class SE {
                         new Clause(N8P2,igual,"no"),
 
                 },
-                new Clause(resultadoN8,igual,"crear Driagramas para la creacion de infra estructura")
+                new Clause(resultadoN8,igual,"Ingenieria Civil")
         );
         Rule ruleN8P2 = new Rule(
                 reglas, "ruleN8",
@@ -554,7 +554,7 @@ public class SE {
                         new Clause(N9P2,igual,"no"),
 
                 },
-                new Clause(resultadoN9,igual,"Te interesa el dibujo aplicado a la cartografia")
+                new Clause(resultadoN9,igual,"Diseño Gráfico")
         );
         Rule ruleN9P2 = new Rule(
                 reglas, "ruleN9",
@@ -572,7 +572,7 @@ public class SE {
                         new Clause(N10P2,igual,"no"),
 
                 },
-                new Clause(resultadoN10,igual,"Te interesa el dibujo aplicado a la cartografia")
+                new Clause(resultadoN10,igual,"Arquitecto")
         );
         Rule ruleN10P2 = new Rule(
                 reglas, "ruleN10",
@@ -581,7 +581,7 @@ public class SE {
                         new Clause(N10P2,igual,"Si"),
 
                 },
-                new Clause(resultadoN10,igual,"Te interesa el dibujo para realizar labore generales")
+                new Clause(resultadoN10,igual,"Diseño Gráfico")
         );
 
 
